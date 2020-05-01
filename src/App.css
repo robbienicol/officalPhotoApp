@@ -6,6 +6,56 @@
   height: 40vmin;
   pointer-events: none;
 }
+.profile {
+  background-color: rgb(224, 223, 223);
+}
+.filler {
+  padding: 30px;
+  background: url("https://images.unsplash.com/photo-1503803548695-c2a7b4a5b875?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
+}
+.home {
+  padding: 200px;
+  background: url("https://images.unsplash.com/photo-1581898975010-1446955616ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+.click {
+  background-color: rgb(90, 187, 182);
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.textbox2 {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: rgb(168, 167, 167);
+  color: white;
+}
+.textbox {
+  font-family: inherit;
+  float: left;
+  font-size: 250%;
+  margin: 0;
+  overflow: visible;
+  letter-spacing: inherit;
+  line-height: inherit;
+  outline-offset: -2px;
+  flex-grow: 1;
+  width: 90%;
+  background: none;
+  border: none;
+  color: rgb(201, 42, 116);
+  background-color: teal;
+  box-sizing: border-box !important;
+  padding-left: 12px;
+  padding-bottom: 20px;
+  box-shadow: none;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
