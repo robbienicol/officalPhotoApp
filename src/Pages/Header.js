@@ -1,11 +1,15 @@
-import React, { useRef } from "react";
-import { Link } from "react-router-dom";
-import "./App.css";
-import Collection from "./Pages/Collection";
+import React, { useRef, useState } from "react";
+import { Link, withRouter } from "react-router-dom";
+import "../App.css";
 
-const Header = ({ handleSubmit }) => {
+const Header = (props) => {
   const Ref = useRef("");
-
+  console.log(props);
+  const [searchText, setSearchText] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.history.push(`collection?query=${Ref.current.value}`);
+  };
   return (
     <div>
       <br />
@@ -19,10 +23,11 @@ const Header = ({ handleSubmit }) => {
         />
       </Link>
       <div>
-        <form onSubmit={handleSubmit}>
+        <form id="bigg" onSubmit={handleSubmit}>
           <input
             className="textbox"
             ref={Ref}
+            onChange={(e) => setSearchText(e.target.value)}
             type="textbox"
             placeholder="Search..."
           />
@@ -42,4 +47,4 @@ const Header = ({ handleSubmit }) => {
   );
 };
 
-export default Header;
+export default withRouter(Header);

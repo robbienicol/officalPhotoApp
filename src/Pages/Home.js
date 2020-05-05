@@ -1,8 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import Search from "../src/Pages/Search";
-import { Route } from "react-router-dom";
-import { retrieveImagesByCategory } from "./axiosInstance";
-import Photos from "./components/Photos";
+import { retrieveImagesByCategory } from "../components/axiosInstance";
 
 const Home = (props) => {
   const Ref = useRef("");
@@ -10,9 +7,11 @@ const Home = (props) => {
   async function loadImgSyntax() {
     try {
       const response = await retrieveImagesByCategory("random");
+
       setImages(response.data.results);
     } catch (error) {}
   }
+
   useEffect(() => {
     loadImgSyntax();
   }, []);
@@ -20,26 +19,37 @@ const Home = (props) => {
   const handleSubmit = () => {
     props.history.push(`collection?query=${Ref.current.value}`);
   };
+
   const photoGallery = images.map((img) => {
     return (
-      <img
-        width="500"
-        height="500"
-        onClick={() => {
-          console.log(img);
-        }}
-        src={img.urls.small}
-        alt="beach"
-      />
+      <div class="container">
+        <img
+          width="400"
+          height="400"
+          onClick={() => {
+            console.log(img);
+          }}
+          src={img.urls.small}
+          alt="beach"
+        />
+        <div class="overlay">
+          <div class="textCard">
+            <p> {img.alt_description}</p>
+            <p>Date: {img.created_at}</p>
+            <p>Likes: {img.likes}</p>
+          </div>
+        </div>
+      </div>
     );
   });
+
   return (
     <div>
       <div className="home">
         <h1> Robbie's Cool Pic Finder.</h1>
         <h3>Search for whatever picture your in the mood for.</h3>
         <h4>Using this Wonderful Website.</h4>
-        <form onSubmit={handleSubmit}>
+        <form id="bigSearch" onSubmit={handleSubmit}>
           <input
             ref={Ref}
             className="textbox2"
@@ -50,7 +60,7 @@ const Home = (props) => {
       </div>
       <h1>Random Pictures</h1>
       <br />
-      {photoGallery} <Route path="/s" component={Search} />
+      {photoGallery}
     </div>
   );
 };

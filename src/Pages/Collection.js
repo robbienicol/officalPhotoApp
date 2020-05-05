@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { retrieveImagesByCategory } from "../axiosInstance";
+import { retrieveImagesByCategory } from "../components/axiosInstance";
 import Photos from "../components/Photos";
 import queryString from "query-string";
 
@@ -18,8 +18,9 @@ const Collection = (props) => {
 
   return (
     <div>
-      <br />
       <Photos images={images} />
+
+      <br />
     </div>
   );
 };

@@ -1,19 +1,24 @@
 import React from "react";
 
-const Photos = ({ images }) => {
+const Photos = ({ images, photoGallery }) => {
   const imageGallery = images.map((img) => {
+    if (img.urls.small === 0) {
+      return <p>"sorry"</p>;
+    }
     return (
-      <img
-        width="400"
-        height="400"
-        onClick={() => {
-          console.log(img);
-        }}
-        src={img.urls.small}
-        alt="beach"
-      />
+      <div class="container">
+        <img width="400" height="400" src={img.urls.small} alt="beach" />{" "}
+        <div class="overlay">
+          <div class="textCard">
+            <p> {img.alt_description}</p>
+            <p>Date: {img.created_at}</p>
+            <p>Likes: {img.likes}</p>
+          </div>
+        </div>
+      </div>
     );
   });
+
   return (
     <div>
       <h1 className="filler"> Cool Pictures</h1>

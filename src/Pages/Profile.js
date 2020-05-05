@@ -2,48 +2,22 @@ import React, { useState } from "react";
 
 const Profile = () => {
   const [counter, setCounter] = useState(0);
-
-  const Liked = () => {
-    console.log(Liked);
-    return (
-      <div>
-        <h1>Liked Pictures</h1>
-        <img
-          width="200"
-          height="200"
-          alt="cool"
-          src="https://image.shutterstock.com/image-illustration/crinkle-cut-pulse-blue-pink-260nw-1270991782.jpg"
-        />
-        &nbsp;
-        <img
-          alt="fun"
-          width="200"
-          height="200"
-          src="https://thumbs.dreamstime.com/b/swirling-rainbow-effect-multicolored-trippy-psychedelic-abstract-swirling-rainbow-effect-multicolored-trippy-psychedelic-abstract-155020612.jpg"
-        />
-        &nbsp;
-        <img
-          alt="fun"
-          width="200"
-          height="200"
-          src="https://images.unsplash.com/photo-1536029058117-75fb5c1c4c46?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-        />
-      </div>
-    );
-  };
-
   return (
-    <div className="profile">
-      <h1>Dave TheDude</h1>
-      <img
-        style={{ float: "middle" }}
-        src="https://images.squarespace-cdn.com/content/v1/5d4ee8903899ab0001d52180/1585691887033-Z97OMSGA4C2TRTIHYGJY/ke17ZwdGBToddI8pDm48kNiEM88mrzHRsd1mQ3bxVct7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0topjEaZcWjtmMYdCWL4dkGbxs35J-ZjFa9s1e3LsxrX8g4qcOj2k2AL08mW_Htcgg/Jeff+Circle.png"
-        alt="hey"
-        width="200"
-        height="200"
-      />
-      <h4>Hi, im Dave! I love iceFishing and taking my cat for a walk.</h4>
-      <hr></hr>
+    <div>
+      <div className="profile">
+        <h1>Dave Ugly</h1>
+        <img
+          style={{ float: "middle" }}
+          src="https://images.squarespace-cdn.com/content/v1/5d4ee8903899ab0001d52180/1585691887033-Z97OMSGA4C2TRTIHYGJY/ke17ZwdGBToddI8pDm48kNiEM88mrzHRsd1mQ3bxVct7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0topjEaZcWjtmMYdCWL4dkGbxs35J-ZjFa9s1e3LsxrX8g4qcOj2k2AL08mW_Htcgg/Jeff+Circle.png"
+          alt="hey"
+          width="200"
+          height="200"
+        />
+        <h4>Hi, im Dave! I love iceFishing and taking my cat for a walk.</h4>
+        <h5>Download free, beautiful high-quality photos curated by Dave.</h5>
+
+        <hr></hr>
+      </div>
       <div style={{ float: "left", color: "grey" }}>
         <button onClick={() => setCounter(1)}>
           <svg
@@ -65,26 +39,10 @@ const Profile = () => {
       </div>
       <div>
         <h1>Liked Pictures</h1>
-        <img
-          width="200"
-          height="200"
-          alt="cool"
-          src="https://image.shutterstock.com/image-illustration/crinkle-cut-pulse-blue-pink-260nw-1270991782.jpg"
-        />
-        &nbsp;
-        <img
-          alt="fun"
-          width="200"
-          height="200"
-          src="https://thumbs.dreamstime.com/b/swirling-rainbow-effect-multicolored-trippy-psychedelic-abstract-swirling-rainbow-effect-multicolored-trippy-psychedelic-abstract-155020612.jpg"
-        />
-        &nbsp;
-        <img
-          alt="fun"
-          width="200"
-          height="200"
-          src="https://images.unsplash.com/photo-1536029058117-75fb5c1c4c46?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-        />
+        <p style={{ color: "grey" }}>
+          You Havent Liked any pictures yet, but i suggest you check out some
+          images and get to liking!
+        </p>
       </div>
     </div>
   );
