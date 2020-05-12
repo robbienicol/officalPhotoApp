@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { retrieveImagesByCategory } from "../components/axiosInstance";
+import searchAndNavigate from "../components/useSearch";
 
 const Home = (props) => {
   const Ref = useRef("");
@@ -17,7 +18,7 @@ const Home = (props) => {
   }, []);
 
   const handleSubmit = () => {
-    props.history.push(`collection?query=${Ref.current.value}`);
+    searchAndNavigate(props.history, Ref.current.value);
   };
 
   const photoGallery = images.map((img) => {

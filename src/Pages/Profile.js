@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const Profile = () => {
   const [counter, setCounter] = useState(0);
+
   return (
     <div>
       <div className="profile">
@@ -19,7 +20,7 @@ const Profile = () => {
         <hr></hr>
       </div>
       <div style={{ float: "left", color: "grey" }}>
-        <button onClick={() => setCounter(1)}>
+        <button onClick={() => setCounter(counter + 1)}>
           <svg
             class="DhJsa"
             version="1.1"

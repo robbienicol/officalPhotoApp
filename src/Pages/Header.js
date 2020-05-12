@@ -1,19 +1,18 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Link, withRouter } from "react-router-dom";
 import "../App.css";
+import searchAndNavigate from "../components/useSearch";
 
 const Header = (props) => {
-  const Ref = useRef("");
-  console.log(props);
   const [searchText, setSearchText] = useState("");
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
-    props.history.push(`collection?query=${Ref.current.value}`);
-  };
+    searchAndNavigate(props.history, searchText);
+  }
   return (
     <div>
       <br />
-      <Link to="/">
+      <Link to="/" onClick={() => setSearchText("")}>
         <img
           src="https://i.vippng.com/png/small/209-2093905_caricature-carita-face-cute-colorful-happy-feliz-trippy.png"
           alt="hey"
@@ -23,12 +22,12 @@ const Header = (props) => {
         />
       </Link>
       <div>
-        <form id="bigg" onSubmit={handleSubmit}>
+        <form type="reset" id="bigg" onSubmit={(e) => handleSubmit(e)}>
           <input
             className="textbox"
-            ref={Ref}
             onChange={(e) => setSearchText(e.target.value)}
             type="textbox"
+            value={searchText}
             placeholder="Search..."
           />
         </form>

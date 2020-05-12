@@ -1,10 +1,8 @@
 import React from "react";
 
 const Photos = ({ images, photoGallery }) => {
+  //maps through the useState images, and makes the images render
   const imageGallery = images.map((img) => {
-    if (img.urls.small === 0) {
-      return <p>"sorry"</p>;
-    }
     return (
       <div class="container">
         <img width="400" height="400" src={img.urls.small} alt="beach" />{" "}

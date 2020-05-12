@@ -3,17 +3,19 @@ import { retrieveImagesByCategory } from "../components/axiosInstance";
 import Photos from "../components/Photos";
 import queryString from "query-string";
 
-const Collection = (props) => {
-  const values = queryString.parse(props.location.search);
+export const Collection = (props) => {
   const [images, setImages] = useState([]);
-  async function loadImgSyntax() {
+
+  const values = queryString.parse(props.location.search);
+  async function getImages() {
     try {
       const response = await retrieveImagesByCategory(values.query);
       setImages(response.data.results);
     } catch (error) {}
   }
+
   useEffect(() => {
-    loadImgSyntax();
+    getImages();
   }, [values.query]);
 
   return (

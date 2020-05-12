@@ -9,10 +9,6 @@ import Collection from "./Pages/Collection";
 import Profile from "../src/Pages/Profile";
 
 function App(props) {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    props.history.push(`collection?query=${e}`);
-  };
   return (
     <div className="App">
       <Header />
