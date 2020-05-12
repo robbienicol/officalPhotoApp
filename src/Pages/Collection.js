@@ -18,6 +18,13 @@ export const Collection = (props) => {
     getImages();
   }, [values.query]);
 
+  if (images.length === 0) {
+    return (
+      <p style={{ color: "grey" }}>
+        Sorry, your search was trash, try something else
+      </p>
+    );
+  }
   return (
     <div>
       <Photos images={images} />
